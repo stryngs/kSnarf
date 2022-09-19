@@ -1,5 +1,7 @@
 # kSnarf
-kSnarf is a Free and Open Source tool which operates in Linux for Intelligence Gathering with a nod to Data Visualization of any protocol.  The default usage for kSnarf is aimed at Wireless traffic and works with any network card so long as it can drop to Monitor mode at a minimum.
+kSnarf operates in Linux for extracting various intelligence correlation data points.  Those gathered points can be monitored in real time or for a period of time in the past.
+
+The default usage for kSnarf is aimed at wireless traffic and works with any network card so long as it can drop to monitor mode at a minimum.  [piCopilot](https://github.com/stryngs/piCopilot#lessons-learned-from-tools-like-picopilot) is one such tool leveraging kSnarf in this manner.
 
 kSnarf has an experimental Bluetooth module called kBlue which leverages the [Ubertooth One](https://greatscottgadgets.com/ubertoothone/).  
 
