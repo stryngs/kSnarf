@@ -1,0 +1,7 @@
+easy-thread>=1.0.6
+netaddr>=0.8.0
+packetEssentials>=1.8.4
+psutil>=5.9.2
+psycopg2>=2.9.3
+scapy>=2.4.5
+sh>=1.14.3
