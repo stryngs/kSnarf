@@ -1,7 +1,12 @@
-# kSnarf
-kSnarf operates in Linux for extracting various intelligence correlation data points from the RF spectrum.  Those gathered points can be monitored in real time or for a period of time in the past.
 
-The default usage for kSnarf is aimed at wireless traffic and works with any network card so long as it can drop to monitor mode at a minimum.  [piCopilot](https://github.com/stryngs/piCopilot#lessons-learned-from-tools-like-picopilot) is one such tool leveraging the kSnarf libraries in this manner.
+# kSnarf
+kSnarf is a tool written in [Python](https://www.python.org/) that extracts various data points in real time or for a period of time in the past.
+
+Point retention is handled by a local or remote [PostgreSQL](https://www.postgresql.org/) instance allowing for multi-user interaction.
+
+Data visualization is left to the user.  Some ideas that come to mind are [Grafana](https://grafana.com/), [Plotly](https://plotly.com/) and [Maltego](https://www.maltego.com/).
+
+The default usage for kSnarf is aimed at wireless traffic and works with any network card so long as it can drop to [Monitor Mode](https://www.geeksforgeeks.org/how-to-put-wifi-interface-into-monitor-mode-in-linux/) at a minimum.  [piCopilot](https://github.com/stryngs/piCopilot#lessons-learned-from-tools-like-picopilot) is one such tool leveraging the kSnarf libraries in this manner.
 
 New public modules are added to kSnarf by request or as development takes place.  Current development for kSnarf is focused on [SDR](https://en.wikipedia.org/wiki/Software-defined_radio).
 
