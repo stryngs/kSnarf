@@ -45,8 +45,14 @@ class Unify(object):
         # Grab OUIs
         print ('Loading OUIs')
         self.ouiDict = {}
-        with open(self.baseDir + '/lib/support/oui.txt', 'r') as iFile:
-            ouiRows = iFile.read().splitlines()
+
+        try:
+            with open(self.baseDir + '/lib/support/oui.txt', 'r', encoding = 'UTF-8') as iFile:
+                ouiRows = iFile.read().splitlines()
+        except:
+            ouiRows = []
+            print('OUIs empty')
+
         for i in ouiRows:
             oui = re.findall('(.*)\s+\(hex\)\s+(.*)', i)
             if len(oui) == 1:
