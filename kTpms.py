@@ -48,7 +48,7 @@ class Tpms(object):
 
             ## db prep
             db.execute("""
-                       CREATE TABLE IF NOT EXISTS tpms(dev_timestamp TEXT,
+                       CREATE TABLE IF NOT EXISTS tpms(dev_timestamp TIMESTAMPTZ,
                                                        model TEXT,
                                                        id TEXT,
                                                        status INT,
@@ -142,19 +142,19 @@ if __name__ == '__main__':
                                                      %s,
                                                      %s);
                                          """, (tLog.get('time'),
-                                                 tLog.get('model'),
-                                                 tLog.get('id'),
-                                                 tLog.get('status'),
-                                                 tLog.get('battery_ok'),
-                                                 tLog.get('counter'),
-                                                 tLog.get('failed'),
-                                                 tLog.get('pressure_kPa'),
-                                                 tLog.get('temperature_C'),
-                                                 tLog.get('freq1'),
-                                                 tLog.get('freq2'),
-                                                 tLog.get('rssi'),
-                                                 tLog.get('snr'),
-                                                 tLog.get('noise')))
+                                               tLog.get('model'),
+                                               tLog.get('id'),
+                                               tLog.get('status'),
+                                               tLog.get('battery_ok'),
+                                               tLog.get('counter'),
+                                               tLog.get('failed'),
+                                               tLog.get('pressure_kPa'),
+                                               tLog.get('temperature_C'),
+                                               tLog.get('freq1'),
+                                               tLog.get('freq2'),
+                                               tLog.get('rssi'),
+                                               tLog.get('snr'),
+                                               tLog.get('noise')))
             except Exception as E:
                 print('inner ~~', E)
         except Exception as E:
