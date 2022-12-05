@@ -37,6 +37,13 @@ ALTER USER root WITH PASSWORD 'idrop';
 CREATE DATABASE idrop;
 ```
 
+## Module requirements
+```
+python3 -m venv env
+source env/bin/activate
+python3 -m pip install RESOURCEs/*.tar.gz
+```
+
 ## Getting started with 802.11 ([Scapy](https://github.com/secdev/scapy))
 Modify ./system.conf if nothing else to ensure prop.nic makes sense, by default prop.nic is set to wlan1mon.
 ```bash
