@@ -28,17 +28,10 @@ class Control(object):
         self.nic = nic
         self.chanList = chanList
         self.interval = interval
-        self.curChan = None
-        self.curFreq = None
 
         ## Deal with channel hopping
         if chanList is not False:
             Hopper(self)
-
-        ## Deal with no channel hopping
-        else:
-            self.curChan = int(self.iwGet().split('(Channel')[1].strip().split(')')[0])
-            self.curFreq = PE.chanFreq.twoFourRev(int(self.curChan))
 
 
     def chanHop(self, chanList, interval):
@@ -51,8 +44,6 @@ class Control(object):
             random.shuffle(chanList)
             for chan in chanList:
                 self.iwSet(chan)
-                self.curChan = chan
-                self.curFreq = PE.chanFreq.twoFourRev(int(self.curChan))
                 time.sleep(interval)
 
 
@@ -63,12 +54,9 @@ class Control(object):
 
     def iwGet(self):
         """Show the current wifi channel in str() format"""
-        p1 = subprocess.Popen(split('iwlist %s channel' % self.nic),
+        p1 = subprocess.Popen(split(f'iw {self.nic} info'),
                               stdout = subprocess.PIPE)
-        p2 = subprocess.Popen(split('tail -n 2'),
+        p2 = subprocess.Popen(split('grep channel'),
                               stdin = p1.stdout,
                               stdout = subprocess.PIPE)
-        p3 = subprocess.Popen(split('head -n 1'),
-                              stdin = p2.stdout,
-                              stdout = subprocess.PIPE)
-        return p3.communicate()[0].strip()
+        return p2.communicate()[0].strip().decode().split(',')[0].split(' ')[1]
