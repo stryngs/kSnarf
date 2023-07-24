@@ -178,7 +178,7 @@ class Snarf(object):
                     return True
         except Exception as E:
             print(E, packet.summary())
-            wrpcap('seenTestFail-{0}.pcap'.format(time.time()))
+            # wrpcap(packet, 'seenTestFail-{0}.pcap'.format(time.time()))
 
 
     def sniffer(self):
