@@ -16,7 +16,7 @@ New public modules are added to kSnarf by request or as development takes place.
 - [TPMS](https://en.wikipedia.org/wiki/Tire-pressure_monitoring_system)
 
 # Privately available modules upon request
-Support for various things such as Ethernet monitoring (802.3), IDS or IPS, **non-root code execution** and so forth may be requested via [chat](https://gitter.im/ICSec/kSnarf).  The room is checked once daily so if you do not receive an instant response please be patient and you should get a reply within 24 hours.
+Support for various things such as Ethernet monitoring (802.3), IDS or IPS, **non-root code execution** and so forth may be requested via [chat](https://app.gitter.im/#/room/#kSnarf:gitter.im).
 
 # Recommended, but optional hardware
 - [HackRF One](https://greatscottgadgets.com/hackrf/one/)
