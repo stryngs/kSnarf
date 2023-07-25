@@ -37,6 +37,10 @@ def crtlC(cap, unity):
     def tmp(signal, frame):
         print('\nTrying to stop gracefully')
         cap.con.close()
+
+        ## Custom here
+        ## blah
+
         for i in psutil.process_iter():
             if 'kSnarf.py' in ' '.join(i.cmdline()):
                 i.kill()

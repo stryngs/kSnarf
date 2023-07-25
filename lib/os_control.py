@@ -49,7 +49,12 @@ class Control(object):
 
     def iwSet(self, channel):
         """Set the wifi channel"""
-        os.system('iwconfig {0} channel {1}'.format(self.nic, channel))
+        try:
+            os.system('iwconfig {0} channel {1}'.format(self.nic, channel))
+
+        ## Custom here
+        except Exception as E:
+            print(f'[!] - iwSet({channel})', E)
 
 
     def iwGet(self):

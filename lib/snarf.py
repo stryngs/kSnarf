@@ -176,6 +176,8 @@ class Snarf(object):
                     self.unity.marker -= 1
 
                     return True
+
+        ## Custom here
         except Exception as E:
             print(E, packet.summary())
             # wrpcap(packet, 'seenTestFail-{0}.pcap'.format(time.time()))
